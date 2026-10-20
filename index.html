@@ -115,14 +115,43 @@ td.method{font-weight:700;white-space:nowrap}
 .rules{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
 @media (max-width:760px){.rules{grid-template-columns:1fr}}
 .rules h4{margin:0 0 8px;font-size:19px}
-.rules .tag{font-size:14px;font-weight:800;color:var(--accent);margin-right:6px}
+.rules .tag{font-size:inherit;font-weight:800;color:var(--accent);margin-right:6px}
 .ex{margin-top:12px;font-size:16px;background:var(--surface-2);border-radius:10px;padding:10px 12px}
 .ex b{color:var(--accent);margin-right:6px}
+.ex-list{list-style:none;margin:6px 0 0;padding:0;display:grid;gap:4px}
 
 /* Filter */
 .filters{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 12px}
 .filters button{font:inherit;font-size:15px;font-weight:700;border:1px solid var(--line);background:var(--surface);color:var(--muted);padding:5px 12px;border-radius:999px;cursor:pointer}
 .filters button[aria-pressed="true"]{color:var(--on-accent);border-color:var(--accent-fill);background:var(--accent-fill)}
+
+/* Term inventory */
+.inv-stats{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin:16px 0}
+@media (max-width:760px){.inv-stats{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px;box-shadow:var(--shadow)}
+.stat b{display:block;font-size:24px;line-height:1.2;font-weight:800}
+.stat b.ta{color:var(--a)} .stat b.tb{color:var(--b)} .stat b.tc{color:var(--c)}
+.stat span{font-size:14px;color:var(--muted)}
+.inv-controls{display:grid;gap:10px;margin-bottom:12px}
+.inv-search{font:inherit;font-size:16px;width:100%;padding:10px 14px;border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--text)}
+.inv-search:focus{outline:2px solid var(--accent-fill);outline-offset:-1px}
+.inv-row{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center}
+.inv-row .filters{margin:0}
+.inv-check{display:inline-flex;gap:6px;align-items:center;font-size:15px;color:var(--text);cursor:pointer}
+.inv-check input{accent-color:var(--accent-fill);width:16px;height:16px}
+.inv-select{font:inherit;font-size:15px;padding:6px 10px;border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--text)}
+.inv-table td{vertical-align:middle}
+.inv-cat{color:var(--muted);font-size:14px;white-space:nowrap}
+.pri{font-size:13px;font-weight:700;color:var(--text);white-space:nowrap}
+.pri-n{font-size:13px;color:var(--muted);white-space:nowrap}
+.tb-main{font-weight:700}
+.tb-sub{font-size:14px;color:var(--muted);margin-top:2px}
+.tb-m{display:inline-block;margin-top:4px;font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:6px;padding:0 6px}
+.tb-why{font-size:13px;color:var(--text);background:var(--surface-2);border-radius:6px;padding:4px 8px;margin-top:6px}
+.tb-m + .tb-m{margin-left:4px}
+.tb-ok{color:var(--on-accent);background:var(--accent-fill);border-color:var(--accent-fill)}
+.inv-def{font-size:14px;color:var(--muted)}
+.inv-empty{text-align:center;color:var(--muted);padding:24px 0;margin:0}
 
 footer{max-width:1160px;margin:0 auto;padding:24px 16px 48px;color:var(--muted);font-size:15px;border-top:1px solid var(--line)}
 </style>
@@ -145,7 +174,7 @@ footer{max-width:1160px;margin:0 auto;padding:24px 16px 48px;color:var(--muted);
       <li><a href="#s2">2. 용어 판단 기준</a></li>
       <li><a href="#s3">3. 설명 제공 기준</a></li>
       <li><a href="#s4">4. 표기 세부 규칙</a></li>
-      <li><a href="#s5">5. 실제 적용 사례</a></li>
+      <li><a href="#s5">5. 용어 인벤토리</a></li>
     </ol>
   </nav>
 
@@ -264,8 +293,8 @@ footer{max-width:1160px;margin:0 auto;padding:24px 16px 48px;color:var(--muted);
         <table>
           <thead><tr><th style="width:140px">설명 방식</th><th>적용 기준</th></tr></thead>
           <tbody>
-            <tr><td class="method">라벨 변경</td><td>쉬운 표현으로 변경해도 금융적 의미가 유지되는 경우</td></tr>
-            <tr><td class="method">괄호 병기</td><td>짧은 설명만으로 의미를 전달할 수 있는 경우</td></tr>
+            <tr><td class="method">표현 변경</td><td>쉬운 표현으로 변경해도 금융적 의미가 유지되는 경우</td></tr>
+            <tr><td class="method">괄호 설명</td><td>짧은 설명만으로 의미를 전달할 수 있는 경우</td></tr>
             <tr><td class="method">보조 문구</td><td>현재 화면에서 반드시 이해해야 하는 정보인 경우</td></tr>
             <tr><td class="method">툴팁</td><td>추가적인 개념 설명이 필요하지만 핵심 판단에 필수적이지 않은 경우</td></tr>
             <tr><td class="method">상세 안내</td><td>금융 제도, 거래 조건, 위험 등 복잡한 설명이 필요한 경우</td></tr>
@@ -303,7 +332,15 @@ footer{max-width:1160px;margin:0 auto;padding:24px 16px 48px;color:var(--muted);
             <li>금융상품의 공식 약어는 유지하되 필요한 경우 한글 명칭이나 설명을 제공한다.</li>
             <li>내부 업무용 약어는 고객 화면에 그대로 노출하지 않는 것을 원칙으로 한다.</li>
           </ul>
-          <div class="ex"><b>예시</b>EPS <span class="arrow">→</span> EPS(주당순이익)</div>
+          <div class="ex"><b>예시</b>
+            <ul class="ex-list">
+              <li>EPS <span class="arrow">→</span> EPS(주당순이익)</li>
+              <li>PER <span class="arrow">→</span> PER(주가수익비율)</li>
+              <li>PBR <span class="arrow">→</span> PBR(주가순자산비율)</li>
+              <li>ETF <span class="arrow">→</span> ETF(상장지수펀드)</li>
+              <li>SOR <span class="arrow">→</span> SOR(자동 주문 경로 선택)</li>
+            </ul>
+          </div>
         </div>
         <div class="card">
           <h4><span class="tag">4-3</span>최초 노출 및 반복 설명</h4>
@@ -327,26 +364,33 @@ footer{max-width:1160px;margin:0 auto;padding:24px 16px 48px;color:var(--muted);
 
     <!-- 5 -->
     <section id="s5">
-      <h2><span class="num">05</span>실제 적용 사례</h2>
-      <p class="lead" style="margin-top:12px">아래 사례는 표기 기준을 설명하기 위한 예시이며, 실제 적용 시 상품 및 서비스 정책 확인이 필요하다.</p>
-      <div class="filters" role="group" aria-label="유형 필터">
-        <button aria-pressed="true" data-f="all">전체</button>
-        <button aria-pressed="false" data-f="a">A. 유지형</button>
-        <button aria-pressed="false" data-f="b">B. 설명형</button>
-        <button aria-pressed="false" data-f="c">C. 개선형</button>
+      <h2><span class="num">05</span>용어 인벤토리</h2>
+      <p class="lead" style="margin-top:12px">서비스에서 쓰는 금융 용어를 표기 유형과 검토 우선순위로 정리했다. 용어를 검색하거나 유형·분야로 걸러 볼 수 있다.</p>
+
+      <div class="inv-stats" id="invStats"></div>
+
+      <div class="inv-controls">
+        <input type="search" id="invSearch" class="inv-search" placeholder="용어, To-be, 정의로 검색 (예: 증거금, 환율)" aria-label="용어 검색">
+        <div class="inv-row">
+          <div class="filters" role="group" aria-label="유형 필터" id="invType">
+            <button aria-pressed="true" data-f="all">전체</button>
+            <button aria-pressed="false" data-f="A">A. 유지형</button>
+            <button aria-pressed="false" data-f="B">B. 설명형</button>
+            <button aria-pressed="false" data-f="C">C. 개선형</button>
+          </div>
+          <label class="inv-check"><input type="checkbox" id="invPri"> 우선 검토만</label>
+          <select id="invCat" class="inv-select" aria-label="분야 선택"></select>
+        </div>
       </div>
+
       <div class="table-wrap">
-        <table id="cases">
-          <thead><tr><th style="width:110px">유형</th><th>As-is</th><th>To-be</th><th>판단 근거</th></tr></thead>
-          <tbody>
-            <tr data-t="a"><td><span class="badge a">A. 유지형</span></td><td>디폴트옵션</td><td class="tobe">디폴트옵션</td><td>금융 제도의 공식 명칭 유지. 필요 시 별도 설명 제공</td></tr>
-            <tr data-t="b"><td><span class="badge b">B. 설명형</span></td><td>예수금</td><td class="tobe">예수금<small>+ 계좌에 보유한 현금 안내</small></td><td>출금가능금액과의 혼동 방지</td></tr>
-            <tr data-t="b"><td><span class="badge b">B. 설명형</span></td><td>미체결</td><td class="tobe">미체결<small>+ 아직 거래가 완료되지 않은 주문</small></td><td>주문 상태에 대한 이해 지원</td></tr>
-            <tr data-t="b"><td><span class="badge b">B. 설명형</span></td><td>반대매매</td><td class="tobe">반대매매<small>+ 증권사에 의한 강제 매도 가능성 안내</small></td><td>금융적 위험 및 처리 결과 명확화</td></tr>
-            <tr data-t="c"><td><span class="badge c">C. 개선형</span></td><td>디폴트옵션 대기자금 해지</td><td class="tobe">디폴트옵션 자동매수 제외</td><td>디폴트옵션 설정 자체의 해지로 오인할 가능성 감소</td></tr>
-          </tbody>
+        <table class="inv-table" style="min-width:880px">
+          <thead><tr><th style="width:160px">용어 (As-is)</th><th style="width:96px">유형</th><th style="width:96px">우선순위</th><th style="width:300px">To-be 제안</th><th>정의</th></tr></thead>
+          <tbody id="invBody"></tbody>
         </table>
       </div>
+      <p class="inv-empty" id="invEmpty" hidden>조건에 맞는 용어가 없어요.</p>
+      <div class="note">※ To-be는 유형별 표기 원칙에 따라 만든 제안 초안으로, 적용 전 검토가 필요하다. 분야는 용어를 찾기 쉽도록 묶은 분류다. 유형과 우선순위는 인벤토리 원본 기준이며, 실제 적용 시 상품 및 서비스 정책 확인이 필요하다.</div>
     </section>
   </main>
 </div>
@@ -361,19 +405,179 @@ const obs=new IntersectionObserver(es=>{
 },{rootMargin:'-20% 0px -70% 0px'});
 document.querySelectorAll('main section').forEach(s=>obs.observe(s));
 
-// Case filter
-document.querySelectorAll('.filters button').forEach(b=>b.addEventListener('click',()=>{
-  document.querySelectorAll('.filters button').forEach(x=>x.setAttribute('aria-pressed',x===b));
-  const f=b.dataset.f;
-  document.querySelectorAll('#cases tbody tr').forEach(r=>r.hidden=!(f==='all'||r.dataset.t===f));
+// Term inventory: [분야, 용어, 유형, 우선 검토 여부, 설명]
+const INV=[
+['자금·증거금','예수금','A',1,'증권 계좌에 보유한 현금'],
+['자금·증거금','D+1 / D+2 예수금','B',1,'결제 예정일을 반영한 예상 현금 잔액'],
+['자금·증거금','주문가능금액','B',1,'주문에 사용할 수 있는 금액'],
+['자금·증거금','출금가능금액','B',1,'현재 계좌 밖으로 이체할 수 있는 금액'],
+['자금·증거금','증거금','A',1,'거래를 위해 미리 확보해야 하는 금액'],
+['자금·증거금','증거금률','A',0,'주문금액 중 증거금으로 필요한 비율'],
+['자금·증거금','미수금','A',1,'결제일까지 납부해야 할 부족 금액'],
+['자금·증거금','반대매매','A',1,'미납금 등을 회수하기 위한 강제 매도'],
+['자금·증거금','대용금','A',1,'보유 증권을 담보 가치로 환산한 금액'],
+['자금·증거금','매도대금 담보대출','B',1,'매도한 주식의 결제 예정 대금을 담보로 받는 대출'],
+['자금·증거금','결제예정금액','B',0,'매매 거래에 따라 결제될 예정인 금액'],
+['자금·증거금','계좌대체','C',0,'계좌 간 증권이나 자산을 옮기는 처리'],
+['주문·체결','호가','A',1,'주식을 사거나 팔려고 제시한 가격'],
+['주문·체결','지정가','A',1,'고객이 가격을 지정하는 주문'],
+['주문·체결','시장가','A',1,'가격을 지정하지 않고 시장에서 체결을 시도하는 주문'],
+['주문·체결','최유리지정가','B',1,'주문 시점 상대편 최우선 호가를 기준으로 하는 주문'],
+['주문·체결','최우선지정가','B',1,'주문 시점 같은 편 최우선 호가를 기준으로 하는 주문'],
+['주문·체결','조건부지정가','B',1,'미체결 시 종가 결정 단계에서 시장가로 전환되는 주문'],
+['주문·체결','스톱지정가','B',1,'설정 가격에 도달하면 지정가 주문을 제출하는 방식'],
+['주문·체결','IOC','B',1,'즉시 체결 가능한 수량만 체결하고 나머지는 취소'],
+['주문·체결','FOK','B',1,'즉시 전량 체결할 수 없으면 주문 전체 취소'],
+['주문·체결','미체결','A',1,'주문했지만 아직 거래가 성사되지 않은 상태'],
+['주문·체결','부분체결','B',0,'주문 수량 중 일부만 거래가 성사된 상태'],
+['주문·체결','정정주문','C',0,'기존 주문의 가격이나 조건 등을 변경하는 주문'],
+['주문·체결','일괄취소','C',0,'여러 주문을 한 번에 취소하는 처리'],
+['시세·투자지표','체결강도','B',0,'매수·매도 체결량의 상대적인 강도를 나타내는 지표'],
+['시세·투자지표','전일대비','C',0,'전 거래일 종가와 비교한 가격 변화'],
+['시세·투자지표','등락률','A',0,'기준 가격 대비 가격이 변한 비율'],
+['시세·투자지표','호가잔량','B',0,'각 호가에 남아 있는 주문 수량'],
+['시세·투자지표','매수호가 / 매도호가','A',1,'사려는 가격 / 팔려는 가격'],
+['시세·투자지표','시가 / 고가 / 저가 / 종가','A',0,'시작·최고·최저·마지막 거래 가격'],
+['시세·투자지표','거래대금','A',0,'일정 기간 거래된 금액의 합계'],
+['시세·투자지표','시가총액','A',0,'주식 수와 주가를 기준으로 계산한 기업의 시장 가치'],
+['시세·투자지표','PER','B',0,'주가를 주당순이익으로 나눈 지표'],
+['시세·투자지표','PBR','B',0,'주가를 주당순자산으로 나눈 지표'],
+['시세·투자지표','EPS','B',0,'주식 1주당 순이익'],
+['시세·투자지표','배당락','B',1,'배당받을 권리가 없는 상태로 거래되는 것'],
+['시세·투자지표','권리락','B',1,'증자 등으로 주식 관련 권리가 조정되는 것'],
+['해외주식·환율','외화예수금','A',1,'계좌에 보유한 외국 통화 현금'],
+['해외주식·환율','원화주문','B',1,'원화를 기반으로 해외주식을 주문하는 방식'],
+['해외주식·환율','환전가능금액','B',0,'현재 환전에 사용할 수 있는 금액'],
+['해외주식·환율','매매기준율','A',0,'환율 계산의 기준이 되는 환율'],
+['해외주식·환율','환율우대','B',1,'기준 환율 대비 환전 스프레드를 할인하는 혜택'],
+['해외주식·환율','가환율','B',1,'정산 전 임시로 적용하는 환율'],
+['해외주식·환율','환차손익','A',1,'환율 변화로 발생한 이익 또는 손실'],
+['해외주식·환율','주간거래','B',0,'국내 낮 시간대에 제공하는 해외주식 거래 서비스'],
+['세금','양도소득세','A',1,'자산을 양도하여 얻은 과세 대상 소득에 부과되는 세금'],
+['세금','배당소득세','A',0,'배당소득에 부과되는 세금'],
+['잔고·손익','평가금액','A',0,'보유 자산을 현재 기준 가격으로 계산한 금액'],
+['잔고·손익','매입금액','A',0,'보유 자산을 사는 데 들어간 금액'],
+['잔고·손익','평가손익','A',1,'평가금액과 취득원가 등의 차이'],
+['잔고·손익','실현손익','A',1,'매도 등으로 확정된 거래 손익'],
+['잔고·손익','평가수익률','A',0,'보유 자산의 평가손익을 비율로 나타낸 값'],
+['잔고·손익','손익분기점','B',1,'비용 등을 고려해 손익이 0이 되는 기준 가격'],
+['잔고·손익','매입평균가','A',0,'보유 수량을 기준으로 계산한 평균 매입가격'],
+['잔고·손익','결제잔고','B',0,'결제 처리가 반영된 보유 잔고'],
+['상품·연금','ETF','A',1,'특정 지수·자산 등을 추종하며 거래소에서 거래되는 펀드'],
+['상품·연금','ETN','A',1,'증권사가 발행하는 지수·자산 연계 채권형 상품'],
+['상품·연금','레버리지','A',1,'기초자산 변동에 일정 배율로 연동하도록 설계한 구조'],
+['상품·연금','인버스','A',1,'기초자산의 일간 변동과 반대 방향을 추종하는 구조'],
+['상품·연금','환매','A',1,'펀드 등을 되팔아 투자금을 회수하는 것'],
+['상품·연금','환매수수료','A',0,'상품을 환매할 때 부과될 수 있는 비용'],
+['상품·연금','디폴트옵션','A',1,'퇴직연금 운용 지시가 없을 때 적용할 사전지정운용방법'],
+['상품·연금','대기자금','C',1,'운용 또는 매수 등을 기다리는 자금'],
+['상품·연금','위험등급','B',1,'상품의 투자 위험을 구분한 등급'],
+['상품·연금','중도해지','A',1,'만기 전에 계약이나 상품을 종료하는 것'],
+['시장·거래제도','SOR','B',1,'주문을 거래소에 배분하는 자동 주문 경로 선택 체계'],
+['시장·거래제도','KRX / NXT','B',0,'한국거래소 / 넥스트레이드'],
+['시장·거래제도','단일가매매','B',1,'일정 시간 주문을 모아 하나의 가격으로 체결하는 방식'],
+['시장·거래제도','시간외거래','A',0,'정규 거래시간 외에 이루어지는 거래'],
+['신용·담보','신용융자','A',1,'증권사에서 매수 자금을 빌려 주식을 사는 거래'],
+['신용·담보','담보유지비율','A',1,'대출 등에 필요한 담보 수준을 나타내는 비율'],
+['신용·담보','추가증거금','A',1,'거래 유지를 위해 추가 납부해야 하는 증거금'],
+['서비스·인증','약정','C',0,'서비스 이용이나 거래를 위한 계약·동의 절차'],
+['서비스·인증','추가인증','C',0,'기본 인증 외에 추가로 수행하는 본인 확인']
+];
+// To-be 제안 (초안): B 설명형 = [설명 방식, 쉬운 설명], C 개선형 = [바꿀 표현]
+const TOBE={
+'D+1 / D+2 예수금':['보조 문구','결제가 끝난 뒤 1·2영업일 후 남을 예상 현금'],
+'주문가능금액':['보조 문구','지금 주문에 쓸 수 있는 금액'],
+'출금가능금액':['보조 문구','지금 다른 계좌로 보낼 수 있는 금액'],
+'매도대금 담보대출':['보조 문구','판 주식의 받을 돈을 담보로 미리 빌리는 대출'],
+'결제예정금액':['툴팁','거래가 정산되면 들어오거나 빠져나갈 금액'],
+'최유리지정가':['보조 문구','지금 체결될 수 있는 가장 유리한 가격으로 주문'],
+'최우선지정가':['보조 문구','같은 쪽 주문 중 가장 앞선 가격에 맞춰 주문'],
+'조건부지정가':['보조 문구','체결되지 않으면 장 마감 때 시장가로 바뀌는 주문'],
+'스톱지정가':['보조 문구','정한 가격에 닿으면 지정가 주문이 나가는 방식'],
+'IOC':['괄호 설명','IOC(바로 체결되는 수량만 체결, 나머지 취소)'],
+'FOK':['괄호 설명','FOK(전량 바로 체결, 안 되면 전체 취소)'],
+'부분체결':['괄호 설명','부분체결(주문 수량 중 일부만 거래됨)'],
+'체결강도':['툴팁','사려는 힘과 팔려는 힘을 비교한 지표로, 100보다 크면 사려는 쪽이 강해요'],
+'호가잔량':['툴팁','가격별로 아직 거래되지 않고 남은 주문 수량'],
+'PER':['괄호 설명','PER(주가수익비율)'],
+'PBR':['괄호 설명','PBR(주가순자산비율)'],
+'EPS':['괄호 설명','EPS(주당순이익)'],
+'배당락':['보조 문구','이날부터 사면 이번 배당은 받을 수 없어요'],
+'권리락':['보조 문구','이날부터 사면 증자 등으로 생기는 권리를 받을 수 없어요'],
+'원화주문':['보조 문구','미리 환전하지 않고 원화로 해외주식 주문'],
+'환전가능금액':['괄호 설명','환전가능금액(지금 환전할 수 있는 금액)'],
+'환율우대':['보조 문구','환전할 때 붙는 비용(스프레드)을 깎아주는 혜택'],
+'가환율':['보조 문구','환율이 확정되기 전 임시로 적용하는 환율'],
+'주간거래':['툴팁','한국 낮 시간에도 해외주식을 거래할 수 있는 서비스'],
+'손익분기점':['보조 문구','수수료와 세금까지 따져 손해도 이익도 없는 가격'],
+'결제잔고':['툴팁','결제까지 끝난 기준의 보유 잔고'],
+'위험등급':['보조 문구','상품의 투자 위험 정도를 나눈 등급'],
+'SOR':['괄호 설명','SOR(더 유리한 거래소로 주문 자동 배분)'],
+'KRX / NXT':['괄호 설명','KRX(한국거래소) / NXT(넥스트레이드)'],
+'단일가매매':['툴팁','일정 시간 주문을 모아 한 가격으로 체결하는 방식'],
+'계좌대체':['다른 계좌로 옮기기'],
+'정정주문':['주문 수정'],
+'일괄취소':['전체 취소'],
+'전일대비':['전 거래일보다'],
+'대기자금':['디폴트옵션 자동매수 제외'],
+'약정':['이용 동의'],
+'추가인증':['추가 본인 확인']
+};
+// 판단 근거 (기존 표기 예시에서 옮김)
+const WHY={
+'디폴트옵션':'금융 제도의 공식 명칭 유지. 필요 시 별도 설명 제공',
+'예수금':'출금가능금액과의 혼동 방지',
+'미체결':'주문 상태에 대한 이해 지원',
+'반대매매':'금융적 위험 및 처리 결과 명확화',
+'대기자금':"'디폴트옵션 대기자금 해지' 버튼을 바꾼 확정안. 디폴트옵션 설정 자체의 해지로 오인할 가능성 감소"
+};
+const CONFIRMED={'대기자금':1};
+const TYPE={A:['a','A. 유지형'],B:['b','B. 설명형'],C:['c','C. 개선형']};
+const inv={type:'all',pri:false,cat:'all',q:''};
+const invBody=document.getElementById('invBody'), invEmpty=document.getElementById('invEmpty');
+const esc=s=>s.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+(function(){
+  const cats=[...new Set(INV.map(r=>r[0]))];
+  document.getElementById('invCat').innerHTML='<option value="all">전체 분야</option>'+cats.map(c=>`<option>${c}</option>`).join('');
+  const n=t=>INV.filter(r=>r[2]===t).length;
+  document.getElementById('invStats').innerHTML=
+    `<div class="stat"><b>${INV.length}</b><span>전체 용어</span></div>`+
+    `<div class="stat"><b class="ta">${n('A')}</b><span>유지형</span></div>`+
+    `<div class="stat"><b class="tb">${n('B')}</b><span>설명형</span></div>`+
+    `<div class="stat"><b class="tc">${n('C')}</b><span>개선형</span></div>`+
+    `<div class="stat"><b>${INV.filter(r=>r[3]).length}</b><span>우선 검토</span></div>`;
+})();
+function toBe(r){
+  const t=TOBE[r[1]], why=WHY[r[1]]?`<div class="tb-why">근거: ${esc(WHY[r[1]])}</div>`:'';
+  const tag=m=>`<span class="tb-m">${m}</span>`+(CONFIRMED[r[1]]?'<span class="tb-m tb-ok">확정</span>':'');
+  if(r[2]==='A') return `<div class="tb-main">${esc(r[1])}</div>${why}${tag('용어 유지')}`;
+  if(r[2]==='C') return `<div class="tb-main">${esc(t[0])}</div>${why}${tag('표현 변경')}`;
+  if(t[0]==='괄호 설명') return `<div class="tb-main">${esc(t[1])}</div>${why}${tag('괄호 설명')}`;
+  return `<div class="tb-main">${esc(r[1])}</div><div class="tb-sub">${esc(t[1])}</div>${why}${tag(t[0])}`;
+}
+function renderInv(){
+  const q=inv.q.trim().toLowerCase();
+  const rows=INV.filter(r=>(inv.type==='all'||r[2]===inv.type)&&(!inv.pri||r[3])&&(inv.cat==='all'||r[0]===inv.cat)&&(!q||(r[1]+' '+r[4]+' '+(TOBE[r[1]]||[]).join(' ')+' '+(WHY[r[1]]||'')).toLowerCase().includes(q)));
+  invBody.innerHTML=rows.map(r=>`<tr><td class="tobe">${esc(r[1])}<small>${r[0]}</small></td><td><span class="badge ${TYPE[r[2]][0]}">${TYPE[r[2]][1]}</span></td><td>${r[3]?'<span class="pri">우선 검토</span>':'<span class="pri-n">일반 검토</span>'}</td><td>${toBe(r)}</td><td class="inv-def">${esc(r[4])}</td></tr>`).join('');
+  invEmpty.hidden=rows.length>0;
+}
+document.querySelectorAll('#invType button').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('#invType button').forEach(x=>x.setAttribute('aria-pressed',x===b));
+  inv.type=b.dataset.f; renderInv();
 }));
+document.getElementById('invPri').addEventListener('change',e=>{inv.pri=e.target.checked;renderInv();});
+document.getElementById('invCat').addEventListener('change',e=>{inv.cat=e.target.value;renderInv();});
+document.getElementById('invSearch').addEventListener('input',e=>{inv.q=e.target.value;renderInv();});
+renderInv();
+
+
 
 // Decision helper (2-2 프로세스)
 const body=document.getElementById('helperBody'), trail=document.getElementById('trail');
 const results={
   a:{badge:'<span class="badge a">A. 유지형</span>',title:'공식 용어를 그대로 유지',desc:'공식 명칭이며 고객이 이해할 수 있습니다. 필요하면 별도 설명만 제공하세요.'},
-  b:{badge:'<span class="badge b">B. 설명형</span>',title:'공식 용어 + 쉬운 설명',desc:'용어는 유지하되 괄호 병기, 보조 문구, 툴팁, 상세 안내 중 화면 맥락에 맞는 설명 방식을 고르세요.'},
-  c:{badge:'<span class="badge c">C. 개선형</span>',title:'고객 관점의 쉬운 표현으로 변경',desc:'금융적 의미와 거래 조건이 달라지지 않는지 확인한 뒤 라벨을 변경하세요.'},
+  b:{badge:'<span class="badge b">B. 설명형</span>',title:'공식 용어 + 쉬운 설명',desc:'용어는 유지하되 괄호 설명, 보조 문구, 툴팁, 상세 안내 중 화면 맥락에 맞는 설명 방식을 고르세요.'},
+  c:{badge:'<span class="badge c">C. 개선형</span>',title:'고객 관점의 쉬운 표현으로 변경',desc:'금융적 의미와 거래 조건이 달라지지 않는지 확인한 뒤 표현을 변경하세요.'},
   keep:{badge:'<span class="badge a">현재 표기 유지</span>',title:'현재 표기 유지 가능',desc:'공식 명칭은 아니지만 고객이 의미와 행동 결과를 이해할 수 있습니다. 서비스 전반에서 일관되게 쓰고 있는지 확인하세요.'}
 };
 let path=[];
