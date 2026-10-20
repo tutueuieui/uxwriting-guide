@@ -18,55 +18,56 @@
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:24px}
-body{margin:0;background:var(--bg);color:var(--text);font-family:"Pretendard Variable",Pretendard,system-ui,-apple-system,sans-serif;font-size:15px;line-height:1.7;word-break:keep-all;-webkit-font-smoothing:antialiased}
+body{margin:0;background:var(--bg);color:var(--text);font-family:"Pretendard Variable",Pretendard,system-ui,-apple-system,sans-serif;font-size:16px;line-height:1.7;word-break:keep-all;-webkit-font-smoothing:antialiased}
 a{color:inherit}
 .layout{max-width:1160px;margin:0 auto;padding:0 16px;display:grid;grid-template-columns:220px minmax(0,1fr);gap:48px}
 @media (max-width:900px){.layout{grid-template-columns:minmax(0,1fr);gap:0}}
 
 /* Header */
 .hero{max-width:1160px;margin:0 auto;padding:56px 16px 32px}
-.eyebrow{display:inline-flex;gap:8px;align-items:center;font-size:14px;font-weight:700;color:var(--accent);background:var(--accent-soft);padding:4px 10px;border-radius:999px}
-.hero h1{font-size:clamp(30px,5vw,46px);line-height:1.25;margin:16px 0 8px;font-weight:800;letter-spacing:-.02em}
-.hero p{margin:0;color:var(--muted);font-size:19px}
-.meta{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:20px;font-size:14px;color:var(--muted)}
+.eyebrow{display:inline-flex;gap:8px;align-items:center;font-size:15px;font-weight:700;color:var(--accent);background:var(--accent-soft);padding:4px 10px;border-radius:999px}
+.hero h1{font-size:clamp(32px,5vw,48px);line-height:1.25;margin:16px 0 8px;font-weight:800;letter-spacing:-.02em}
+.hero p{margin:0;color:var(--muted);font-size:20px}
+.meta{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:20px;font-size:15px;color:var(--muted)}
 .meta b{color:var(--text);font-weight:500}
 
 /* TOC */
 .toc{position:sticky;top:24px;align-self:start;padding-top:8px}
 .toc ol{list-style:none;margin:0;padding:0;border-left:2px solid var(--line)}
-.toc a{display:block;padding:6px 0 6px 14px;margin-left:-2px;border-left:2px solid transparent;text-decoration:none;color:var(--muted);font-size:15px}
+.toc a{display:block;padding:6px 0 6px 14px;margin-left:-2px;border-left:2px solid transparent;text-decoration:none;color:var(--muted);font-size:16px}
 .toc a:hover{color:var(--text)}
 .toc a.active{color:var(--accent);border-left-color:var(--accent-fill);font-weight:700}
 @media (max-width:900px){
   .toc{position:sticky;top:0;z-index:5;background:var(--bg);margin:0 -16px;padding:8px 16px;border-bottom:1px solid var(--line)}
   .toc ol{display:flex;gap:6px;overflow-x:auto;border:0;scrollbar-width:none}
-  .toc a{white-space:nowrap;border:1px solid var(--line);border-radius:999px;padding:4px 12px;margin:0;font-size:14px}
+  .toc a{white-space:nowrap;border:1px solid var(--line);border-radius:999px;padding:4px 12px;margin:0;font-size:15px}
   .toc a.active{border-color:var(--accent-fill);background:var(--accent-fill);color:var(--on-accent)}
 }
 
 /* Sections */
 main{padding-bottom:96px;min-width:0}
 section{padding-top:40px}
-h2{font-size:28px;margin:0 0 4px;letter-spacing:-.01em;display:flex;gap:10px;align-items:baseline}
-h2 .num{color:var(--accent);font-size:18px;font-weight:800}
-h3{font-size:19px;margin:32px 0 12px}
+h2{font-size:30px;margin:0 0 4px;letter-spacing:-.01em;display:flex;gap:10px;align-items:baseline}
+h2 .num{color:var(--accent);font-size:inherit;font-weight:800}
+h3{font-size:20px;margin:32px 0 12px}
 p{margin:0 0 12px}
 .lead{color:var(--muted)}
+.lead b{color:var(--text)}
 .card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px 22px;box-shadow:var(--shadow)}
 ul.dots{margin:0;padding-left:18px}
 ul.dots li{margin:4px 0}
-.note{font-size:15px;color:var(--muted);background:var(--surface-2);border-radius:10px;padding:10px 14px;margin-top:12px}
+.note{font-size:16px;color:var(--muted);background:var(--surface-2);border-radius:10px;padding:10px 14px;margin-top:12px}
 
 /* Principles */
 .principles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
 @media (max-width:760px){.principles{grid-template-columns:1fr}}
-.principle .idx{font-size:14px;font-weight:800;color:var(--accent)}
-.principle h4{margin:4px 0 2px;font-size:21px}
-.principle .sub{font-size:15px;color:var(--muted);margin-bottom:12px}
-.principle ul{font-size:15px}
+.principle .idx{font-size:20px;line-height:1;font-weight:400;color:var(--accent)}
+.principle h4{margin:4px 0 2px;font-size:22px}
+.principle .sub{font-size:16px;color:var(--muted);margin-bottom:12px}
+.principle ul{font-size:16px}
 
 /* Badges */
-.badge{display:inline-block;font-size:13px;font-weight:700;padding:2px 9px;border-radius:999px;white-space:nowrap}
+.badge{display:inline-block;font-size:14px;font-weight:700;padding:2px 9px;border-radius:999px;white-space:nowrap}
 .badge.a{color:var(--a);background:var(--a-soft)}
 .badge.b{color:var(--b);background:var(--b-soft)}
 .badge.c{color:var(--c);background:var(--c-soft)}
@@ -76,16 +77,16 @@ ul.dots li{margin:4px 0}
 @media (max-width:760px){.types{grid-template-columns:1fr}}
 .type{border-top:4px solid}
 .type.a{border-top-color:var(--a-line)} .type.b{border-top-color:var(--b-line)} .type.c{border-top-color:var(--c-line)}
-.type h4{margin:8px 0 6px;font-size:20px}
-.type .rule{margin-top:12px;font-size:15px;font-weight:700}
+.type h4{margin:8px 0 6px;font-size:21px}
+.type .rule{margin-top:12px;font-size:16px;font-weight:700}
 
 /* Steps */
 .steps{display:grid;gap:12px;counter-reset:s}
 .step{display:grid;grid-template-columns:56px 1fr;gap:16px;align-items:start}
-.step .no{font-size:13px;font-weight:800;color:var(--accent);background:var(--accent-soft);border-radius:10px;text-align:center;padding:8px 0;line-height:1.3}
-.step .no b{display:block;font-size:22px}
-.step h4{margin:0 0 4px;font-size:18px}
-.branch{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;font-size:15px}
+.step .no{font-size:14px;font-weight:800;color:var(--accent);background:var(--accent-soft);border-radius:10px;text-align:center;padding:8px 0;line-height:1.3}
+.step .no b{display:block;font-size:24px}
+.step h4{margin:0 0 4px;font-size:19px}
+.branch{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;font-size:16px}
 .branch span{background:var(--surface-2);border-radius:8px;padding:4px 10px}
 .branch b{color:var(--accent)}
 
@@ -93,48 +94,47 @@ ul.dots li{margin:4px 0}
 .helper{margin-top:20px;border:1px dashed var(--accent-fill);background:var(--surface)}
 .helper .q{font-weight:700;margin-bottom:12px}
 .helper .btns{display:flex;gap:8px;flex-wrap:wrap}
-.helper button{font:inherit;font-size:15px;font-weight:700;border:1px solid var(--line);background:var(--surface-2);color:var(--text);padding:8px 16px;border-radius:10px;cursor:pointer}
+.helper button{font:inherit;font-size:16px;font-weight:700;border:1px solid var(--line);background:var(--surface-2);color:var(--text);padding:8px 16px;border-radius:10px;cursor:pointer}
 .helper button:hover{border-color:var(--accent)}
 .helper button.primary{background:var(--accent-fill);border-color:var(--accent-fill);color:var(--on-accent)}
-.helper .trail{font-size:14px;color:var(--muted);margin-bottom:8px;min-height:1em}
-.helper .result h4{margin:6px 0 4px;font-size:20px}
+.helper .trail{font-size:15px;color:var(--muted);margin-bottom:8px;min-height:1em}
+.helper .result h4{margin:6px 0 4px;font-size:21px}
 
 /* Tables */
 .table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:var(--surface);box-shadow:var(--shadow)}
-table{border-collapse:collapse;width:100%;font-size:15px;min-width:520px}
+table{border-collapse:collapse;width:100%;font-size:16px;min-width:520px}
 th,td{text-align:left;padding:12px 16px;border-bottom:1px solid var(--line);vertical-align:top}
-th{font-size:13px;color:var(--muted);font-weight:700;background:var(--surface-2)}
+th{font-size:14px;color:var(--muted);font-weight:700;background:var(--surface-2)}
 tr:last-child td{border-bottom:0}
 td.method{font-weight:700;white-space:nowrap}
 .arrow{color:var(--muted);margin:0 4px}
 .tobe{font-weight:700}
-.tobe small{display:block;font-weight:400;color:var(--muted);font-size:14px}
+.tobe small{display:block;font-weight:400;color:var(--muted);font-size:15px}
 
 /* Rules grid */
 .rules{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
 @media (max-width:760px){.rules{grid-template-columns:1fr}}
-.rules h4{margin:0 0 8px;font-size:18px}
-.rules .tag{font-size:13px;font-weight:800;color:var(--accent);margin-right:6px}
-.ex{margin-top:12px;font-size:15px;background:var(--surface-2);border-radius:10px;padding:10px 12px}
+.rules h4{margin:0 0 8px;font-size:19px}
+.rules .tag{font-size:14px;font-weight:800;color:var(--accent);margin-right:6px}
+.ex{margin-top:12px;font-size:16px;background:var(--surface-2);border-radius:10px;padding:10px 12px}
 .ex b{color:var(--accent);margin-right:6px}
 
 /* Filter */
 .filters{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 12px}
-.filters button{font:inherit;font-size:14px;font-weight:700;border:1px solid var(--line);background:var(--surface);color:var(--muted);padding:5px 12px;border-radius:999px;cursor:pointer}
+.filters button{font:inherit;font-size:15px;font-weight:700;border:1px solid var(--line);background:var(--surface);color:var(--muted);padding:5px 12px;border-radius:999px;cursor:pointer}
 .filters button[aria-pressed="true"]{color:var(--on-accent);border-color:var(--accent-fill);background:var(--accent-fill)}
 
-footer{max-width:1160px;margin:0 auto;padding:24px 16px 48px;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+footer{max-width:1160px;margin:0 auto;padding:24px 16px 48px;color:var(--muted);font-size:15px;border-top:1px solid var(--line)}
 </style>
 </head>
 <body>
 
 <header class="hero">
-  <span class="eyebrow">UX 가이드 고도화</span>
+  <span class="eyebrow">UX 라이팅 고도화</span>
   <h1>금융 UX 용어 표기 가이드</h1>
   <p>정확한 용어를 유지하면서 고객이 이해하기 쉽게 설명하기</p>
   <div class="meta">
     <span>원칙 <b>고객의 이해를 돕는 정확하고 명확한 용어 사용</b></span>
-    <span>담당 <b>코어뱅킹UX부</b></span>
   </div>
 </header>
 
@@ -203,20 +203,20 @@ footer{max-width:1160px;margin:0 auto;padding:24px 16px 48px;color:var(--muted);
         <div class="card type a">
           <span class="badge a">A. 유지형</span>
           <h4>공식 용어 유지</h4>
-          <p style="margin:0;font-size:15px">공식 명칭이거나 고객이 알아야 하는 표준 금융 용어</p>
+          <p style="margin:0;font-size:16px">공식 명칭이거나 고객이 알아야 하는 표준 금융 용어</p>
         </div>
         <div class="card type b">
-          <span class="badge b">B. 병기형</span>
+          <span class="badge b">B. 설명형</span>
           <h4>공식 용어 + 쉬운 설명</h4>
-          <p style="margin:0;font-size:15px">용어는 유지해야 하지만 고객의 이해를 돕기 위한 설명이 필요한 경우</p>
+          <p style="margin:0;font-size:16px">용어는 유지해야 하지만 고객의 이해를 돕기 위한 설명이 필요한 경우</p>
         </div>
         <div class="card type c">
           <span class="badge c">C. 개선형</span>
           <h4>쉬운 표현으로 변경</h4>
-          <p style="margin:0;font-size:15px">공식 명칭을 유지할 필요가 없고 더 직관적인 표현이 가능한 경우</p>
+          <p style="margin:0;font-size:16px">공식 명칭을 유지할 필요가 없고 더 직관적인 표현이 가능한 경우</p>
         </div>
       </div>
-      <div class="note">※ 유지형도 고객의 이해가 어렵다면 병기형으로 적용할 수 있다.</div>
+      <div class="note">※ 유지형도 고객의 이해가 어렵다면 설명형으로 적용할 수 있다.</div>
 
       <h3>2-2. 용어 판단 프로세스</h3>
       <div class="steps">
@@ -224,7 +224,7 @@ footer{max-width:1160px;margin:0 auto;padding:24px 16px 48px;color:var(--muted);
           <div class="no">STEP<b>1</b></div>
           <div>
             <h4>공식적으로 유지해야 하는 용어인가?</h4>
-            <p style="margin:0;font-size:15px" class="lead">법령, 금융 제도, 상품명, 계약상 명칭 등을 확인한다.</p>
+            <p style="margin:0;font-size:16px" class="lead">법령, 금융 제도, 상품명, 계약상 명칭 등을 확인한다.</p>
             <div class="branch"><span><b>YES</b> → 공식 용어 유지</span><span><b>NO</b> → 쉬운 표현으로 변경 검토</span></div>
           </div>
         </div>
@@ -232,7 +232,7 @@ footer{max-width:1160px;margin:0 auto;padding:24px 16px 48px;color:var(--muted);
           <div class="no">STEP<b>2</b></div>
           <div>
             <h4>고객이 의미와 행동 결과를 이해할 수 있는가?</h4>
-            <p style="margin:0;font-size:15px" class="lead">사용자 친숙도, 오해 가능성, 금융적 영향을 검토한다.</p>
+            <p style="margin:0;font-size:16px" class="lead">사용자 친숙도, 오해 가능성, 금융적 영향을 검토한다.</p>
             <div class="branch"><span><b>YES</b> → 현재 표기 유지 가능</span><span><b>NO</b> → 설명을 추가하거나 쉬운 표현으로 개선</span></div>
           </div>
         </div>
@@ -240,9 +240,9 @@ footer{max-width:1160px;margin:0 auto;padding:24px 16px 48px;color:var(--muted);
           <div class="no">STEP<b>3</b></div>
           <div>
             <h4>적절한 표기 및 설명 방식을 결정한다.</h4>
-            <ul class="dots" style="font-size:15px">
+            <ul class="dots" style="font-size:16px">
               <li>공식 용어이며 이해하기 쉬운 경우 → <span class="badge a">유지형</span></li>
-              <li>공식 용어이며 설명이 필요한 경우 → <span class="badge b">병기형</span></li>
+              <li>공식 용어이며 설명이 필요한 경우 → <span class="badge b">설명형</span></li>
               <li>표현 개선이 가능하고 의미가 유지되는 경우 → <span class="badge c">개선형</span></li>
             </ul>
           </div>
@@ -290,7 +290,7 @@ footer{max-width:1160px;margin:0 auto;padding:24px 16px 48px;color:var(--muted);
       <div class="rules" style="margin-top:20px">
         <div class="card">
           <h4><span class="tag">4-1</span>용어의 일관성</h4>
-          <ul class="dots" style="font-size:15px">
+          <ul class="dots" style="font-size:16px">
             <li>동일한 개념은 서비스 전반에서 동일한 용어를 사용한다.</li>
             <li>동일한 의미를 가진 용어를 화면마다 다르게 표현하지 않는다.</li>
             <li>용어를 변경할 경우 관련 화면과 안내 문구에 일관되게 반영한다.</li>
@@ -298,7 +298,7 @@ footer{max-width:1160px;margin:0 auto;padding:24px 16px 48px;color:var(--muted);
         </div>
         <div class="card">
           <h4><span class="tag">4-2</span>약어 및 영문 표기</h4>
-          <ul class="dots" style="font-size:15px">
+          <ul class="dots" style="font-size:16px">
             <li>고객에게 익숙하지 않은 약어는 최초 노출 시 의미를 설명한다.</li>
             <li>금융상품의 공식 약어는 유지하되 필요한 경우 한글 명칭이나 설명을 제공한다.</li>
             <li>내부 업무용 약어는 고객 화면에 그대로 노출하지 않는 것을 원칙으로 한다.</li>
@@ -307,7 +307,7 @@ footer{max-width:1160px;margin:0 auto;padding:24px 16px 48px;color:var(--muted);
         </div>
         <div class="card">
           <h4><span class="tag">4-3</span>최초 노출 및 반복 설명</h4>
-          <ul class="dots" style="font-size:15px">
+          <ul class="dots" style="font-size:16px">
             <li>고객이 처음 접하거나 이해하기 어려운 개념은 적절한 시점에 설명한다.</li>
             <li>최초 노출 여부만이 아니라 해당 화면에서의 정보 중요도를 함께 고려한다.</li>
             <li>거래 판단에 중요한 정보는 이전 화면에서 설명했더라도 필요한 시점에 다시 제공할 수 있다.</li>
@@ -315,7 +315,7 @@ footer{max-width:1160px;margin:0 auto;padding:24px 16px 48px;color:var(--muted);
         </div>
         <div class="card">
           <h4><span class="tag">4-4</span>상태 및 행동 표현</h4>
-          <ul class="dots" style="font-size:15px">
+          <ul class="dots" style="font-size:16px">
             <li>시스템이나 내부 처리 관점보다 고객이 인지하는 상태와 행동을 중심으로 표현한다.</li>
             <li>버튼은 고객이 수행하는 행동을 명확하게 나타낸다.</li>
             <li>처리 결과를 오해할 수 있는 포괄적이거나 모호한 표현은 지양한다.</li>
@@ -332,7 +332,7 @@ footer{max-width:1160px;margin:0 auto;padding:24px 16px 48px;color:var(--muted);
       <div class="filters" role="group" aria-label="유형 필터">
         <button aria-pressed="true" data-f="all">전체</button>
         <button aria-pressed="false" data-f="a">A. 유지형</button>
-        <button aria-pressed="false" data-f="b">B. 병기형</button>
+        <button aria-pressed="false" data-f="b">B. 설명형</button>
         <button aria-pressed="false" data-f="c">C. 개선형</button>
       </div>
       <div class="table-wrap">
@@ -340,9 +340,9 @@ footer{max-width:1160px;margin:0 auto;padding:24px 16px 48px;color:var(--muted);
           <thead><tr><th style="width:110px">유형</th><th>As-is</th><th>To-be</th><th>판단 근거</th></tr></thead>
           <tbody>
             <tr data-t="a"><td><span class="badge a">A. 유지형</span></td><td>디폴트옵션</td><td class="tobe">디폴트옵션</td><td>금융 제도의 공식 명칭 유지. 필요 시 별도 설명 제공</td></tr>
-            <tr data-t="b"><td><span class="badge b">B. 병기형</span></td><td>예수금</td><td class="tobe">예수금<small>+ 계좌에 보유한 현금 안내</small></td><td>출금가능금액과의 혼동 방지</td></tr>
-            <tr data-t="b"><td><span class="badge b">B. 병기형</span></td><td>미체결</td><td class="tobe">미체결<small>+ 아직 거래가 완료되지 않은 주문</small></td><td>주문 상태에 대한 이해 지원</td></tr>
-            <tr data-t="b"><td><span class="badge b">B. 병기형</span></td><td>반대매매</td><td class="tobe">반대매매<small>+ 증권사에 의한 강제 매도 가능성 안내</small></td><td>금융적 위험 및 처리 결과 명확화</td></tr>
+            <tr data-t="b"><td><span class="badge b">B. 설명형</span></td><td>예수금</td><td class="tobe">예수금<small>+ 계좌에 보유한 현금 안내</small></td><td>출금가능금액과의 혼동 방지</td></tr>
+            <tr data-t="b"><td><span class="badge b">B. 설명형</span></td><td>미체결</td><td class="tobe">미체결<small>+ 아직 거래가 완료되지 않은 주문</small></td><td>주문 상태에 대한 이해 지원</td></tr>
+            <tr data-t="b"><td><span class="badge b">B. 설명형</span></td><td>반대매매</td><td class="tobe">반대매매<small>+ 증권사에 의한 강제 매도 가능성 안내</small></td><td>금융적 위험 및 처리 결과 명확화</td></tr>
             <tr data-t="c"><td><span class="badge c">C. 개선형</span></td><td>디폴트옵션 대기자금 해지</td><td class="tobe">디폴트옵션 자동매수 제외</td><td>디폴트옵션 설정 자체의 해지로 오인할 가능성 감소</td></tr>
           </tbody>
         </table>
@@ -372,7 +372,7 @@ document.querySelectorAll('.filters button').forEach(b=>b.addEventListener('clic
 const body=document.getElementById('helperBody'), trail=document.getElementById('trail');
 const results={
   a:{badge:'<span class="badge a">A. 유지형</span>',title:'공식 용어를 그대로 유지',desc:'공식 명칭이며 고객이 이해할 수 있습니다. 필요하면 별도 설명만 제공하세요.'},
-  b:{badge:'<span class="badge b">B. 병기형</span>',title:'공식 용어 + 쉬운 설명',desc:'용어는 유지하되 괄호 병기, 보조 문구, 툴팁, 상세 안내 중 화면 맥락에 맞는 설명 방식을 고르세요.'},
+  b:{badge:'<span class="badge b">B. 설명형</span>',title:'공식 용어 + 쉬운 설명',desc:'용어는 유지하되 괄호 병기, 보조 문구, 툴팁, 상세 안내 중 화면 맥락에 맞는 설명 방식을 고르세요.'},
   c:{badge:'<span class="badge c">C. 개선형</span>',title:'고객 관점의 쉬운 표현으로 변경',desc:'금융적 의미와 거래 조건이 달라지지 않는지 확인한 뒤 라벨을 변경하세요.'},
   keep:{badge:'<span class="badge a">현재 표기 유지</span>',title:'현재 표기 유지 가능',desc:'공식 명칭은 아니지만 고객이 의미와 행동 결과를 이해할 수 있습니다. 서비스 전반에서 일관되게 쓰고 있는지 확인하세요.'}
 };
@@ -386,7 +386,7 @@ function ask(q,yes,no){
 function show(k){
   const r=results[k];
   trail.textContent='응답: '+path.join(' → ');
-  body.innerHTML=`<div class="result">${r.badge}<h4>${r.title}</h4><p class="lead" style="font-size:15px">${r.desc}</p></div><div class="btns"><button id="restart">다시 판단하기</button></div>`;
+  body.innerHTML=`<div class="result">${r.badge}<h4>${r.title}</h4><p class="lead" style="font-size:16px">${r.desc}</p></div><div class="btns"><button id="restart">다시 판단하기</button></div>`;
   document.getElementById('restart').onclick=start;
 }
 function start(){
